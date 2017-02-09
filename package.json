@@ -1,5 +1,8 @@
 {
-	"name": "katbiznis"
-	"version": "0.0.1"
-	"private": true
+  "name": "katbiznis",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "gulp-image": "^2.7.5"
+  }
 }
