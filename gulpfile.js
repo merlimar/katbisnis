@@ -1,9 +1,10 @@
-var gulp = require("gulp");
-	image = require("gulp-image");
-	sass = require("gulp-sass");
-	autoprefixer = require( "gulp-autoprefixer");
-	csso = require("gulp-csso");
-	pug = require("gulp-pug");
+var gulp = require("gulp"),
+	image = require("gulp-image"),
+	sass = require("gulp-sass"),
+	autoprefixer = require( "gulp-autoprefixer"),
+	csso = require("gulp-csso"),
+	pug = require("gulp-pug"),
+	babel = require("gulp-babel");
 // --- Task for images
 gulp.task( "images", function(){
 	gulp.src("src/images/**")
@@ -25,7 +26,11 @@ gulp.task( "html", function(){
 	.pipe(gulp.dest("."));
 });
 // --- Task for js
-
+gulp.task("js", function(){
+	gulp.src("src/js/**/*.js")
+	.pipe(babel())
+	.pipe( gulp.dest("asset/js"))
+});
 // --- Watch tasks
 
 // --- Aliases
