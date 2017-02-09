@@ -32,7 +32,13 @@ gulp.task("js", function(){
 	.pipe( gulp.dest("asset/js"))
 });
 // --- Watch tasks
-
+gulp.task("watch", function(){
+	gulp.watch( "src/images/**",["images"]);
+	gulp.watch( "src/sass/**",["css"]);
+	gulp.watch( "src/pug/**",["html"]);
+	gulp.watch( "src/js/**",["js"]);
+})
 // --- Aliases
-
+gulp.task("default",["images","html","css","js"]);
+gulp.task("work",["default","watch"])
 
