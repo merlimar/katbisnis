@@ -1,6 +1,8 @@
 var gulp = require("gulp");
 	image = require("gulp-image");
 	sass = require("gulp-sass");
+	autoprefixer = require( "gulp-autoprefixer");
+	csso = require("gulp-csso");
 // --- Task for images
 gulp.task( "images", function(){
 	gulp.src("src/images/**")
@@ -11,7 +13,9 @@ gulp.task( "images", function(){
 gulp.task( "css", function(){
 	gulp.src( "src/sass/**/*.scss")
 	.pipe( sass().on( "error", sass.logError))
-	.pipe( gulp.dest( "assets/css",))
+	.pipe( autoprefixer())
+	.pipe(csso())
+	.pipe( gulp.dest( "assets/css"))
 })
 // --- Task for pug
 
