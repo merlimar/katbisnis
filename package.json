@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "gulp-image": "^2.7.5"
+    "gulp-image": "^2.7.5",
+    "gulp-sass": "^3.1.0"
   }
 }
